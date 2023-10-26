@@ -1,0 +1,148 @@
+###
+GET http://localhost:8000/api/movies/
+Authorization: Token f8841f8f796955e390bef4eb4daacb1c74b380a0
+
+###
+POST http://localhost:8000/api/movies/
+Content-Type: application/json
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+{
+    "title": "New Movie",
+    "description": "A new movie",
+    "rating": 5,
+    "director": "John Doe",
+    "release_date": "2023-10-26",
+    "genre": "Action",
+    "length": 120,
+    "language": "English",
+    "country": "USA"
+}
+
+###
+GET http://localhost:8000/api/movies/1/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+PUT http://localhost:8000/api/movies/1/
+Content-Type: application/json
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+{
+    "title": "Updated Movie",
+    "description": "An updated movie",
+    "rating": 4,
+    "director": "Jane Doe",
+    "release_date": "2023-10-26",
+    "genre": "Drama",
+    "length": 90,
+    "language": "Spanish",
+    "country": "Spain"
+}
+###
+DELETE http://localhost:8000/api/movies/2/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+GET http://localhost:8000/api/books/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+POST http://localhost:8000/api/books/
+Content-Type: application/json
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+{
+    "title": "New Book",
+    "author": "John Smith",
+    "description": "A new book",
+    "published_date": "2023-10-26",
+    "genre": "Mystery",
+    "language": "English",
+    "pages": 300,
+    "isbn": "1234567890123"
+}
+
+GET http://localhost:8000/api/books/1/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+PUT http://localhost:8000/api/books/1/
+Content-Type: application/json
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+{
+    "title": "Updated Book",
+    "author": "Jane Smith",
+    "description": "An updated book",
+    "published_date": "2023-10-26",
+    "genre": "Romance",
+    "language": "French",
+    "pages": 250,
+    "isbn": "9876543210987"
+}
+
+###
+DELETE http://localhost:8000/api/books/1/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+GET http://localhost:8000/api/wishlist/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+POST http://localhost:8000/api/wishlist/
+Content-Type: application/json
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+{
+    "user": 1,
+    "movie": 1,
+    "book": null
+}
+
+###
+GET http://localhost:8000/api/wishlist/1/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+DELETE http://localhost:8000/api/wishlist/1/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+GET http://localhost:8000/api/reviews/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+POST http://localhost:8000/api/reviews/
+Content-Type: application/json
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+{
+    "user": 1,
+    "content": "A great movie!",
+    "rating": 5,
+    "movie": 1,
+    "book": null
+}
+
+###
+GET http://localhost:8000/api/reviews/1/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+###
+PUT http://localhost:8000/api/reviews/1/
+Content-Type: application/json
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
+
+{
+    "user": 1,
+    "content": "An updated review",
+    "rating": 4,
+    "movie": 1,
+    "book": null
+}
+
+###
+DELETE http://localhost:8000/api/reviews/1/
+Authorization: Token 96de808b56a7615dd5235f3cbc80882f0e9e8b74
