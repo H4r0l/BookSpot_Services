@@ -19,6 +19,14 @@ def login(request):
     return Response({"token": token.key, "user": serializer.data})
 
 @api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def logout(request):
+    request.auth.delete()  # Invalida el token actual
+    return Response({"detail": "Successfully logged out."}, status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
 def signup(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
@@ -37,4 +45,9 @@ def signup(request):
 def test_token(request):
     return Response("Passed for {}".format(request.user.email))
 
-
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def get_user(request):
+    serializer = UserSerializer(request.user)
+    return Response(serializer.data, status=status.HTTP_200_OK)

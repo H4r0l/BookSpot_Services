@@ -3,8 +3,14 @@ POST http://127.0.0.1:8000/auth/login
 Content-Type: application/json
 
 {
-    "username": "admin2", "password":"admin"
+    "username": "admin3", "password":"admin"
 }
+###
+POST http://127.0.0.1:8000/auth/logout
+Content-Type: application/json
+Authorization: Token 81311a3e71aee111ce863a32399bfb496ed49240
+
+
 ###
 POST http://127.0.0.1:8000/auth/signup
 Content-Type: application/json
@@ -18,3 +24,8 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/auth/test_token
 Content-Type: application/json
 Authorization: Token 81311a3e71aee111ce863a32399bfb496ed49240
+
+###
+GET http://127.0.0.1:8000/auth/get_user
+Content-Type: application/json
+Authorization: Token f8841f8f796955e390bef4eb4daacb1c74b380a0
