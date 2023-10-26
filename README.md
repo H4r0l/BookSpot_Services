@@ -55,6 +55,35 @@ This repository contains the source code for the BookSpot Services API, a RESTfu
 
 ## API Endpoints
 
-| Method |  Url | Description |
-|:-----|:--------:|------:|
-| GET   | **/api/** | To be determined soon |
+### App Functionality Endpoints
+
+| Method |  Url                          | Description                       |
+|:-------|:------------------------------|:----------------------------------|
+| GET    | **/api/movies/**              | Get a list of movies              |
+| POST   | **/api/movies/**              | Add a new movie                    |
+| GET    | **/api/movies/<int:pk>/**     | Get a specific movie              |
+| PUT    | **/api/movies/<int:pk>/**     | Update a specific movie           |
+| DELETE | **/api/movies/<int:pk>/**     | Delete a specific movie           |
+| GET    | **/api/books/**               | Get a list of books               |
+| POST   | **/api/books/**               | Add a new book                     |
+| GET    | **/api/books/<int:pk>/**      | Get a specific book               |
+| PUT    | **/api/books/<int:pk>/**      | Update a specific book            |
+| DELETE | **/api/books/<int:pk>/**      | Delete a specific book            |
+| GET    | **/api/wishlist/**            | Get the wishlist                  |
+| POST   | **/api/wishlist/**            | Add a new item to the wishlist     |
+| GET    | **/api/wishlist/<int:pk>/**   | Get a specific wishlist item      |
+| DELETE | **/api/wishlist/<int:pk>/**   | Delete a specific wishlist item   |
+| GET    | **/api/reviews/**             | Get a list of reviews              |
+| POST   | **/api/reviews/**             | Add a new review                   |
+| GET    | **/api/reviews/<int:pk>/**    | Get a specific review             |
+| PUT    | **/api/reviews/<int:pk>/**    | Update a specific review          |
+| DELETE | **/api/reviews/<int:pk>/**    | Delete a specific review          |
+
+### Authentication Endpoints
+
+| Method |  Url                  | Description                    |
+|:-------|:----------------------|:-------------------------------|
+| POST   | **/auth/signup/**   | Register a new user            |
+| POST   | **/auth/login/**      | Log in and get an auth token    |
+| POST   | **/auth/logout/**     | Log out and invalidate token   |
+| GET    | **/auth/get_user/**       | Get details of authenticated user |
