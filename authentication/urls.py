@@ -1,6 +1,8 @@
-from django.urls import path
-from .views import authAPI
+from django.urls import re_path
+from . import views
 
 urlpatterns = [
-    path('', authAPI.as_view())
+    re_path('login', views.login),
+    re_path('signup', views.signup),
+    re_path('test_token', views.test_token),
 ]
