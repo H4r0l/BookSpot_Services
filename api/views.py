@@ -7,6 +7,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 #Models And serializers import
 from .serializers import MovieSerializer, BookSerializer, ReviewSerializer, WishlistSerializer
 from .models import Movie, Book, Review, Wishlist
+#Filters import
+from .filters import MovieFilter, BookFilter, ReviewFilter
 
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
@@ -14,7 +16,7 @@ class MovieList(generics.ListCreateAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_class = Movie
+    filterset_class = MovieFilter
 
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
@@ -28,7 +30,7 @@ class BookList(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_class = Book
+    filterset_class = BookFilter
 
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
@@ -54,7 +56,7 @@ class ReviewList(generics.ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_class = Review
+    filterset_class = ReviewFilter
 
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
