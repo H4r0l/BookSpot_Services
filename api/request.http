@@ -1,6 +1,6 @@
 ###
-GET http://localhost:8000/api/movies/
-Authorization: Token f8841f8f796955e390bef4eb4daacb1c74b380a0
+GET http://localhost:8000/api/movies/?title__icontains=A
+Authorization: Token f14062d083fd040ebc44bc0f1bccad754688154e
 
 ###
 POST http://localhost:8000/api/movies/
