@@ -2,6 +2,7 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework import generics
+from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
 
 #Models And serializers import
@@ -17,6 +18,7 @@ class MovieList(generics.ListCreateAPIView):
     serializer_class = MovieSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = MovieFilter
+    pagination_class = PageNumberPagination
 
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
