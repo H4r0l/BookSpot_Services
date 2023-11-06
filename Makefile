@@ -21,3 +21,6 @@ test-one:
 
 shellplus:
 	python manage.py shell-plus --ipython --settings=settings.dev
+
+runserver-prod: migrate
+	python manage.py runserver --settings=settings.prod
